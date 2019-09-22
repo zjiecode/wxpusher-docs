@@ -45,7 +45,7 @@
 
 ## 注册并且创建应用
   
-[打开开发者首页](http://wxpusher.zjiecode.com) ，使用微信扫码登录，无需注册，新用户首次扫码自动注册。
+[http://wxpusher.zjiecode.com](http://wxpusher.zjiecode.com) ，使用微信扫码登录，无需注册，新用户首次扫码自动注册。
 
 创建一个应用，如下图：
 
@@ -60,8 +60,8 @@
 ![创建应用](imgs/subscribe.png  ':size=350')
 
 
-# 发送消息
-## http调用
+# 调用API
+## 发送消息
 - POST接口
   POST接口是功能完整的接口，推荐使用。
 
@@ -90,7 +90,16 @@
   ```
   请求参数：appToken、uid、topicId、content、url ，其中content和url请进行urlEncode编码。
 
-## Java SDK
+## 查询状态
+消息发送给Wxpusher，Wxpusher会缓存下来，后台异步推送给微信再分发给用户，当消息数量庞大的时候，可能会有延迟，你可以根据发送消息返回的messageId，查询消息的发送状态
+
+请求方式：GET
+
+说明：查询消息状态，消息缓存有时效性，目前设置缓存时间为7天，7天后查询消息，可能会返回消息不存在
+
+请求地址：http://wxpusher.test.zjiecode.com/api/send/message/{messageId}
+
+# Java SDK
 
 为了方便快速接入，开发了Java的接入SDK ，[https://github.com/zjiecode/wxpusher-client](https://github.com/zjiecode/wxpusher-client).
 
