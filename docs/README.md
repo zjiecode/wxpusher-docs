@@ -97,7 +97,7 @@
 
 说明：查询消息状态，消息缓存有时效性，目前设置缓存时间为7天，7天后查询消息，可能会返回消息不存在
 
-请求地址：http://wxpusher.zjiecode.com/api/send/message/{messageId}
+请求地址：http://wxpusher.zjiecode.com/api/send/query/{messageId}
 
 # Java SDK
 
