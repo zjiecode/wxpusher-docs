@@ -86,7 +86,7 @@
 - GET接口
   GET接口是对POST接口的阉割，主要是为了某些情况下调用方便，只支持对文字（contentType=1）的发送，举例：
   ```
-  http://wxpusher.test.zjiecode.com/api/send/message/?appToken=AT_qHT0cTQfLwYOlBV9cJj9zDSyEmspsmyM&content=123&uid=c1BcpqxEbD8irqlGUh9BhOqR2BvH8yWZ&url=http%3a%2f%2fwxpusher.zjiecode.com
+  http://wxpusher.zjiecode.com/api/send/message/?appToken=AT_qHT0cTQfLwYOlBV9cJj9zDSyEmspsmyM&content=123&uid=c1BcpqxEbD8irqlGUh9BhOqR2BvH8yWZ&url=http%3a%2f%2fwxpusher.zjiecode.com
   ```
   请求参数：appToken、uid、topicId、content、url ，其中content和url请进行urlEncode编码。
 
@@ -97,7 +97,7 @@
 
 说明：查询消息状态，消息缓存有时效性，目前设置缓存时间为7天，7天后查询消息，可能会返回消息不存在
 
-请求地址：http://wxpusher.test.zjiecode.com/api/send/message/{messageId}
+请求地址：http://wxpusher.zjiecode.com/api/send/message/{messageId}
 
 # Java SDK
 
