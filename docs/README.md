@@ -59,6 +59,9 @@
 
 ![创建应用](imgs/subscribe.png  ':size=350')
 
+## 获取UID
+> 老版本的ID，不能在新版本上面使用，需要重新获取。
+- 
 
 # 调用API
 ## 发送消息
@@ -66,6 +69,8 @@
   POST接口是功能完整的接口，推荐使用。
 
   ContentType:application/json
+  
+  地址：http://wxpusher.zjiecode.com/api/send/message
 
   请求数据放在body里面，具体参数如下：
 
