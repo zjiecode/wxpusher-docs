@@ -60,7 +60,7 @@
 
 ![创建应用](imgs/create_app.png  ':size=250')
 
-回调地址：可以不填写，不填写用户关注的时候，就不会有回调，你不能拿到用户的UID
+回调地址：可以不填写，不填写用户关注的时候，就不会有回调，你不能拿到用户的UID，参考<a href="#/?id=callback">回调说明</a>。
 
 关注提示：用户关注或者扫应用码的时候发送给用户的提示，你可以不填写，Wxpusher会提供一个默认文案。你也可以在用户关注回调给你UID的时候，再主动推送一个提示消息给用户。
 ## 扫码关注应用
@@ -70,7 +70,9 @@
 
 ## 获取UID
 > 老版本的ID，不能在新版本上面使用，需要重新获取。
-- 
+  
+## 发送消息
+拿到UID以后，配合应用的appToken，然后调用发送接口发送消息。
 
 # HTTP调用
 ## 发送消息
@@ -118,6 +120,25 @@
 为了方便快速接入，开发了Java的接入SDK ，[https://github.com/zjiecode/wxpusher-client](https://github.com/zjiecode/wxpusher-client).
 
 目前只封装了Java的版本，其他语言请使用Http，如果你有进行封装，也欢迎PR。
+
+# 回调说明 :id=callback
+给用户发送消息，需要知道用户的UID，有2种途径知道用户的UID：
+- 用户关注公众号以后，在菜单里面，找到「获取UID」就可以看到自己的UID了。
+- 如果你在创建应用的时候，写了回调地址，当用户扫描你的应用二维码关注你创建的应用时，WxPusher会对你设置的地址发起HTTP调用，把用户的UID推送给你。
+回调的使用POST方法，数据格式如下：
+```json
+{
+    "action":"app_subscribe",//动作，app_subscribe 表示用户关注应用回调
+    "data":{
+        "appKey":"AK_xxxxxx", //关注应用的appKey
+        "appName":"应用名字",
+        "source":"scan", //用户关注渠道，scan表示扫码关注
+        "time":1569416451573, //消息发生时间
+        "uid":"UID_xxxxxx" //用户uid
+    }
+}
+```
+
 
 # 迁移升级
 
