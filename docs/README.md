@@ -115,6 +115,28 @@
 
 请求地址：http://wxpusher.zjiecode.com/api/send/query/{messageId}
 
+## 创建参数二维码
+有一种场景，就是需要知道当前是谁扫描的二维码，比如：论坛帖子有新消息需要推送给用户，这个如果用户扫码关注，你需要知道是谁扫的二维码，把论坛用户ID和Wxpusher用户的UID绑定，当论坛用户ID有新消息时，推送给Wxpusher用户。这种场景就需要带参数的二维码。
+
+请求方式：POST
+
+请求地址：http://wxpusher.zjiecode.com/api/fun/create/qrcode
+
+ContentType：application/json
+
+说明：创建带参数二维码，用户扫码以后，会在回调里面带上参数，参考<a href="#/?id=callback">回调说明</a>
+
+请求body:
+
+```json
+{
+    "appToken":"xxx",   //必填，appToken,前面有说明，应用的标志
+    "extra":"xxx",      //必填，二维码携带的参数，最长64位
+    "validTime":1800    //可选，二维码的有效期，默认30分钟，最长30天，单位是秒
+}
+ 
+```
+
 # Java SDK
 
 为了方便快速接入，开发了Java的接入SDK ，[https://github.com/zjiecode/wxpusher-client](https://github.com/zjiecode/wxpusher-client).
@@ -134,7 +156,8 @@
         "appName":"应用名字",
         "source":"scan", //用户关注渠道，scan表示扫码关注
         "time":1569416451573, //消息发生时间
-        "uid":"UID_xxxxxx" //用户uid
+        "uid":"UID_xxxxxx", //用户uid
+        "extra":"xxx"    //用户扫描带参数的二维码，二维码携带的参数。扫描默认二维码为空
     }
 }
 ```
