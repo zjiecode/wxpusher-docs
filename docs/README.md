@@ -97,14 +97,14 @@
 
   ```json
   {
-    "appToken":"AT_qHT0cTQfLwYOlBV9cJj9zDSyEmspsmyM",
+    "appToken":"AT_xxx",
     "content":"Wxpusher祝你中秋节快乐!",
-    "contentType":1,//内容类型 1表示文字  2表示html 3表示markdown
+    "contentType":1,//内容类型 1表示文字  2表示html(只发送body标签内部的数据即可，不包括body标签) 3表示markdown 
     "topicIds":[ //发送目标的topicId，是一个数组！！！
         123
     ],
     "uids":[//发送目标的UID，是一个数组！！！
-        "c1BcpqxEbD8irqlGUh9BhOqR2BvH8yWZ"
+        "UID_xxxx"
     ],
     "url":"http://wxpusher.zjiecode.com" //原文链接，可选参数
 }
