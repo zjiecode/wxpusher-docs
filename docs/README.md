@@ -154,7 +154,7 @@ ContentType：application/json
 
 说明：获取到所有关注应用的微信用户用户信息
 
-请求地址：http://wxpusher.zjiecode.com//api/fun/wxuser
+请求地址：http://wxpusher.zjiecode.com/api/fun/wxuser
 
 请求参数：
  - appToken 应用密钥标志
