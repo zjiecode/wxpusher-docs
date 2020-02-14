@@ -1,3 +1,9 @@
+# 本仓库已经过期
+
+为了更好的管理，本仓库已经被迁移到：[https://github.com/wxpusher/wxpusher-docs](https://github.com/wxpusher/wxpusher-docs)
+
+欢迎提交PR，一起完善文档。
+
 # 介绍
 
 > 什么是WxPusher
